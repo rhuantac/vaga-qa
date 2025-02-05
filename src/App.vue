@@ -69,9 +69,10 @@ const logout = () => {
 }
 
 const checkBalanceForVault = () => {
-  if (selectedAccount.value && (selectedAccount.value.balance > 1000000 || selectedAccount.value.balance < -1000000)) {
-    showVault.value = true
-  }
+  // if (selectedAccount.value && (selectedAccount.value.balance > 1000000 || selectedAccount.value.balance < -1000000)) {
+  //   showVault.value = true
+  // }
+  return
 }
 
 // Bug intencional: não verifica saldo negativo em transferências
@@ -312,7 +313,7 @@ const deposit = () => {
         <!-- Botão oculto para acessar o cofre -->
         <div
           @click="revealVaultButton"
-          class="fixed bottom-0 right-0 w-10 h-10 cursor-pointer"
+          class="fixed bottom-0 right-0 w-10 h-10 cursor-pointer shadow-md shadow-indigo-500/50 bg-transparent"
           title="Clique para revelar o cofre"
         ></div>
 
@@ -322,17 +323,3 @@ const deposit = () => {
     </div>
   </div>
 </template>
-
-<style scoped>
-
-
-.hidden-button {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  cursor: pointer;
-}
-</style>
